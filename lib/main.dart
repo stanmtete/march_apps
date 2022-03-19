@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -12,12 +14,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LView(),
+      home: const LView(),
     );
   }
 }
 
 class LView extends StatefulWidget {
+  const LView({Key? key}) : super(key: key);
+
   @override
   _LViewState createState() => _LViewState();
 }
@@ -128,16 +132,11 @@ class _LViewState extends State<LView> {
   Widget richText() {
     return Center(
       child: RichText(
-        text: const TextSpan(
+        text: TextSpan(
           children: <TextSpan>[
             TextSpan(
               text: 'Welcome To My Store',
-              style: TextStyle(
-                fontSize: 32,
-                color: Colors.lightBlue,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 1,
-              ),
+              style: GoogleFonts.leckerliOne(fontSize: 10),
             ),
           ],
         ),
@@ -170,6 +169,7 @@ class _LViewState extends State<LView> {
           Expanded(
             child: Text(
               _msgdec,
+              style: GoogleFonts.aBeeZee(fontSize: 16),
             ),
           ),
           const SizedBox(
